@@ -1,12 +1,28 @@
+<!-- 
+Behzad Ghabaei
+CS 81 - JavaScript
+Assignment 8A - spaceClicker.html
+Instructor Seno
+1/29/2026
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Supernova Galactic Clicker 🚀</title>
-   
+    <style>
+        body { text-align: center; font-family: 'Courier New', Courier, monospace; transition: background 0.5s; padding-top: 50px; background-color: #1a1a2e; color: white; }
+        #cookie-btn { font-size: 80px; cursor: pointer; background: none; border: none; transition: transform 0.1s; }
+        #cookie-btn:active { transform: scale(0.9); }
+        .stats { font-size: 24px; margin: 20px; }
+        #message { font-style: italic; color: #e94560; min-height: 1.5em; }
+    </style>
 </head>
 <body>
-
+<!--Notes: 
+    "class=" corresponds with "."
+    "id=" corresponds with "#"
+    -->
     <h1>✨ Supernova Galactic Clicker ✨</h1>
     <div class="stats">Your Star Power is: <span id="counter">0</span></div>
     

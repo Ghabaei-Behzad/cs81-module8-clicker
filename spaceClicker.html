@@ -29,29 +29,42 @@ Instructor Seno
     <!-- Step 1: The Button and Message Display -->
     <button id="cookie-btn">🌟</button>
     <div id="message">Clicking the star will begin the space travel...</div>
-     <script>
-        // Step 2: Select elements and initialize. We are using DOMs.
+    <script>
+    /*
+     * The methods we used for DOM elements:
+     * document.getElementById()
+     * btn.addEventListener()
+     * counterDisplay.textContent
+     * msgDisplay.innerText, btn.innerText, 
+     * document.body.style.backgroudColor
+     */
+    // Step 2: Select elements and initialize. We are using DOMs.
+         
         const btn = document.getElementById("cookie-btn");
         const counterDisplay = document.getElementById("counter");
         const msgDisplay = document.getElementById("message");
         
+    // The loop count is initialized.
         let count = 0;
-          // Step 3: The Event Listener (the app.)
+          
+    // Step 3: The Event Listener (the app.)
         btn.addEventListener("click", function() {
-              // Increase 
-            count++;
-            counterDisplay.textContent = count;
+        
+    // Increase count.
+        count++;
+        counterDisplay.textContent = count;
 
-            // Step 4: Conditionals and Creative Milestones
+    // Step 4: Conditionals and Creative Milestones at 10, 25, 50, and 100 button clicks.
             if (count === 10) {
                 msgDisplay.innerText = "The core is heating up!";
                 document.body.style.backgroundColor = "#16219e";
             } else if (count === 25) {
                 msgDisplay.innerText = "Wow, you're riding through the galaxy with your clicks!";
                 btn.innerText = "☄️";
-                 document.body.style.backgroundColor = "#16215e";
+                document.body.style.backgroundColor = "#16215e";
             } else if (count === 50) {
-                msgDisplay.innerText = "Warning: The Black Hole is near!";
+                msgDisplay.innerText = "Warning: The Black Hole is near!"; 
+                btn.innerText = "🌠";
                 document.body.style.backgroundColor = "#0f3460";
             } else if (count === 100) {
                 msgDisplay.innerText = "CHAMPION OF THE UNIVERSE! The cosmos is yours.";
@@ -59,6 +72,6 @@ Instructor Seno
                 document.body.style.backgroundColor = "#533483";
             }
         });
-     </script>
+</script>
 </body>
 </html>

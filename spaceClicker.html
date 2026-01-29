@@ -34,9 +34,31 @@ Instructor Seno
         const btn = document.getElementById("cookie-btn");
         const counterDisplay = document.getElementById("counter");
         const msgDisplay = document.getElementById("message");
-
+        
+        let count = 0;
           // Step 3: The Event Listener (the app.)
-        btn.addEventListener("click", function() {});
+        btn.addEventListener("click", function() {
+              // Increase 
+            count++;
+            counterDisplay.textContent = count;
+
+            // Step 4: Conditionals and Creative Milestones
+            if (count === 10) {
+                msgDisplay.innerText = "The core is heating up!";
+                document.body.style.backgroundColor = "#16219e";
+            } else if (count === 25) {
+                msgDisplay.innerText = "Wow, you're riding through the galaxy with your clicks!";
+                btn.innerText = "☄️";
+                 document.body.style.backgroundColor = "#16215e";
+            } else if (count === 50) {
+                msgDisplay.innerText = "Warning: The Black Hole is near!";
+                document.body.style.backgroundColor = "#0f3460";
+            } else if (count === 100) {
+                msgDisplay.innerText = "CHAMPION OF THE UNIVERSE! The cosmos is yours.";
+                btn.innerText = "🌌";
+                document.body.style.backgroundColor = "#533483";
+            }
+        });
      </script>
 </body>
 </html>

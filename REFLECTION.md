@@ -18,13 +18,26 @@ The milestones I chose were at 10, 25, 50, and 100 clicks.  I chose messages for
 different button emoji and background color too.  I chose a dark color for the background at 0 clicks, and an idea I had was to adjust the
 background color by changing the last digit of the hex#.  More colors can be found at www.colorhexa.com.
 At 10 clicks I could see that the code was working.  I ended the milestones at 100 with purple as the background color. The goal was to
-match the visual theme of a "Supernova" while rewarding the player’s effort with increasing descriptions. 
+match the visual theme of a "Supernova" while rewarding the player’s effort with increasing descriptions. I decided to change the button emoji and background color at each milestone of 10, 25, 50, and 100.  There was not a large variety of space theme emojis which were categorized as earth and sky.
 
 ## What challenge or bug surprised you?
 I was surprised by how important it is to keep the variable count outside the event listener function. Initially, if I had reset it to 0
 inside the function, the counter would never have gone past 1 because it would restart on every click. This taught me about variable scope
 and how data needs to be in the right place to be remembered across multiple events. W3Schools helped me with the "try it editor" and examples.
-A surprise I encountered is that I could not use an emoji to rotate around the screen, but an image would have worked using an HTML <img> tag. I researched a way to do this by using <span> with relative positioning for emojis.  This does work and is from Chapter 14: DOM.
+A surprise I encountered is that I could not use an emoji to rotate around the screen, but an image would have worked using an HTML <img> tag. I researched a way to do this by using <span> with relative positioning for emojis.  This does work and is from Chapter 14: DOM. Here is the code:
+ 1.) <p style="text-align: center; font-size: 50px;">
+     <span id="moving-emoji" style="position: relative">🍪</span>
+     </p>
+2.)  let emoji = document.querySelector("#moving-emoji");
+3.)  let angle = Math.PI / 2;
+4.)  function animate(time, lastTime) {
+     if (lastTime != null) { angle += (time - lastTime) * 0.002; }
+     emoji.style.top = (Math.sin(angle) * 40) + "px";
+     emoji.style.left = (Math.cos(angle) * 100) + "px";
+5.)  requestAnimationFrame(newTime => animate(newTime, time)); }
+     requestAnimationFrame(animate);
+This additional feature could make this app much more entertaining.
+
 ## What personal twist did you add?
 Instead of a bakery theme, I added a "Galactic Supernova" twist that changes the entire environment, as you click the mouse. Collecting the emojis at emojipedia.org was helpful.  I used JavaScript to modify the document.body.style.backgroundColor and even change the button's emoji from a star to a galaxy at 100 clicks ( the final milestone.) This made it look and feel less like a simple counter and more like a progressing "story" or game. 
 ## What real-world app uses this kind of interaction?

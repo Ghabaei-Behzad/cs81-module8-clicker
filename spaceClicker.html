@@ -29,6 +29,16 @@ Instructor Seno
     <!-- Step 1: The Button and Message Display -->
     <button id="cookie-btn">🌟</button>
     <div id="message">Clicking the star will begin the space travel...</div>
+    
+    <!--adding a decorative effect, with an E.J. Ch. 14 example, emoji movement-->
+    <p style="text-align: center; font-size: 50px;">
+    <!-- Use a span with relative positioning for emojis -->
+    <span id="moving-emoji" style="position: relative">🍪</span>
+    </p>
+    <p style="text-align: center; font-size: 50px;">
+    <!-- Use a span with relative positioning for emojis -->
+    <span id="moving-emoji2" style="position: relative">🪐</span>
+    </p>
     <script>
     /*
      * The methods we used for DOM elements:
@@ -74,6 +84,31 @@ Instructor Seno
             }
         });
 
+  // Now were having fun with emojis, after completing the assignment.
+  // Eloquent Javascript; Chapter 14: DOM; Positioning and Animating.
+  // the emojis rotate with Math methods.
+
+  let emoji = document.querySelector("#moving-emoji");
+  let emoji2 = document.querySelector("#moving-emoji2");
+  let angle = Math.PI / 2;
+
+  function animate(time, lastTime) {
+    if (lastTime != null) {
+    // (time - lastTime) ensures smooth movement regardless of frame rate
+      angle += (time - lastTime) * 0.002; 
+  }
+    
+  // Math.sin and Math.cos create the circular "orbit" path
+  emoji.style.top = (Math.sin(angle) * 40) + "px";
+  emoji.style.left = (Math.cos(angle) * 100) + "px";
+    
+  emoji2.style.top = (Math.sin(angle) * 20) + "px";
+  emoji2.style.left = (Math.cos(angle) * 50) + "px";
+
+  // Recursively calls itself for a smooth loop
+  requestAnimationFrame(newTime => animate(newTime, time));
+  }
+  requestAnimationFrame(animate);
 </script>
 </body>
 </html>

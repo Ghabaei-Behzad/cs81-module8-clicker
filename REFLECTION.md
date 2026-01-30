@@ -25,9 +25,8 @@ I was surprised by how important it is to keep the variable count outside the ev
 inside the function, the counter would never have gone past 1 because it would restart on every click. This taught me about variable scope
 and how data needs to be in the right place to be remembered across multiple events. W3Schools helped me with the "try it editor" and examples.
 A surprise I encountered is that I could not use an emoji to rotate around the screen, but an image would have worked using an HTML <img> tag. I researched a way to do this by using <span> with relative positioning for emojis.  This does work and is from Chapter 14: DOM. Here is the code:
- 1.) <p style="text-align: center; font-size: 50px;">
-     <span id="moving-emoji" style="position: relative">🍪</span>
-     </p>
+1.) <p> I used: style ="text-align: center; font-size: 50px;"
+    <span> I used: id="moving-emoji" style="position: relative">🍪</span></p>
 2.)  let emoji = document.querySelector("#moving-emoji");
 3.)  let angle = Math.PI / 2;
 4.)  function animate(time, lastTime) {
